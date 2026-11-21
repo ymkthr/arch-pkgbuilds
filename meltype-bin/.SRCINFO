@@ -1,0 +1,25 @@
+pkgbase = meltype-bin
+	pkgdesc = Japanese input method without the Hankaku/Zenkaku key (IBus engine and fcitx5 addon)
+	pkgver = 1.7.0
+	pkgrel = 1
+	url = https://github.com/yksr-melt/Meltype
+	install = meltype.install
+	arch = x86_64
+	license = GPL-3.0-or-later
+	depends = glibc
+	depends = gcc-libs
+	depends = zlib
+	depends = python
+	depends = python-gobject
+	depends = gtk4
+	optdepends = ibus: IBus engine
+	optdepends = fcitx5: fcitx5 addon
+	provides = meltype
+	conflicts = meltype
+	noextract = meltype_1.7.0_amd64.deb
+	options = !strip
+	options = !debug
+	source = meltype_1.7.0_amd64.deb::https://github.com/yksr-melt/Meltype/releases/download/v1.7.0/meltype_1.7.0_amd64.deb
+	sha256sums = 5a3fc115a4d989608c835817edcf58c28593da4147af9683ad9f7f24c8f6b4b5
+
+pkgname = meltype-bin

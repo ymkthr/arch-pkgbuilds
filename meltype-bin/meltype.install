@@ -1,0 +1,24 @@
+_ibus_cache() {
+  command -v ibus >/dev/null 2>&1 && ibus write-cache --system >/dev/null 2>&1 || true
+}
+
+post_install() {
+  _ibus_cache
+  echo 'ログインし直してから、IBus の入力ソースか fcitx5-configtool で Meltype を追加してください。'
+}
+
+pre_upgrade() {
+  pkill -f /opt/meltype/ibus-engine-meltype >/dev/null 2>&1 || true
+}
+
+post_upgrade() {
+  _ibus_cache
+}
+
+pre_remove() {
+  pkill -f /opt/meltype/ibus-engine-meltype >/dev/null 2>&1 || true
+}
+
+post_remove() {
+  _ibus_cache
+}
